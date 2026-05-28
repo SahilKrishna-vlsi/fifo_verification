@@ -85,11 +85,10 @@ module tb ();
   end
   always #5 clk = ~clk;
   always @(posedge clk) begin
-    d1.randomize();
+    if (!d1.randomize()) $error("randomize failed");
     data_in = d1.data_in;
     push = d1.push;
     pop = d1.pop;
-
   end
 
 
