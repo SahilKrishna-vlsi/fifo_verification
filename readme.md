@@ -13,21 +13,6 @@ Small SystemVerilog testbench and DUT for a 7-entry FIFO used for functional ver
 - EDA Playground (https://www.edaplayground.com) — recommended for quick online SystemVerilog simulation; alternatively use a local simulator such as QuestaSim / ModelSim or another tool that supports SystemVerilog.
 - GTKWave (optional) to view the `dump.vcd` when running locally
 
-## Run (QuestaSim / qrun)
-
-From the repository root you can run the example simulation used during development:
-
-```sh
-# run from repo root
-qrun -batch -timescale 1ns/1ns -mfcu rtl/fifo.sv tb/sv_tb.sv -do "run -all; exit"
-```
-
-After the run, open `dump.vcd` with GTKWave:
-
-```sh
-gtkwave dump.vcd
-```
-
 ### Run in EDA Playground (web)
 
 - Go to https://www.edaplayground.com
