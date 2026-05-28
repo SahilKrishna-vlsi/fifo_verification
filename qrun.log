@@ -1,0 +1,535 @@
+QuestaSim-64 qrun 2025.2 Utility 2025.05 May 31 2025
+Start time: 05:40:17 on May 28,2026
+qrun -batch -access=rw+/. -timescale 1ns/1ns -mfcu design.sv testbench.sv -voptargs="+acc=npr" -do " run -all; exit" 
+** Note: (qrun-220) 'modelsim.ini' is used as the ini file.
+Creating library 'qrun.out/work'.
+QuestaSim-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+Start time: 05:40:17 on May 28,2026
+vlog -timescale 1ns/1ns -mfcu design.sv testbench.sv -work qrun.out/work -statslog qrun.out/stats_log -csession=incr 
+** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+-- Compiling module fifo
+-- Compiling package design_sv_unit
+-- Compiling module tb
+** Warning: testbench.sv(88): (vlog-2240) Treating stand-alone use of function 'randomize' as an implicit VOID cast.
+
+Top level modules:
+	tb
+End time: 05:40:17 on May 28,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 1
+QuestaSim-64 vopt 2025.2 Compiler 2025.05 May 31 2025
+** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+Start time: 05:40:17 on May 28,2026
+vopt -access=rw+/. -timescale 1ns/1ns -mfcu "+acc=npr" -findtoplevels qrun.out/work+2+ -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=3 
+** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+
+Top level modules:
+	tb
+
+Analyzing design...
+-- Loading module tb
+-- Loading module fifo
+Optimizing 3 design-units (inlining 0/2 module instances):
+-- Optimizing package design_sv_unit(fast)
+-- Optimizing module tb(fast)
+** Warning: testbench.sv(88): (vopt-2240) Treating stand-alone use of function 'randomize' as an implicit VOID cast.
+-- Optimizing module fifo(fast)
+Optimized design name is qrun_opt
+End time: 05:40:17 on May 28,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 2
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -batch -lib qrun.out/work -do " run -all; exit" -statslog qrun.out/stats_log qrun_opt -appendlog -l qrun.log 
+# Start time: 05:40:17 on May 28,2026
+# //  Questa Sim-64
+# //  Version 2025.2 linux_x86_64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.design_sv_unit(fast)
+# Loading work.tb(fast)
+# Loading work.fifo(fast)
+# 
+# run -all
+# time                    5 data_in:0784910e pop:0 push:1
+# time:                    5
+# fifo[          0]: 00000000
+# fifo[          1]: 00000000
+# fifo[          2]: 00000000
+# fifo[          3]: 00000000
+# fifo[          4]: 00000000
+# fifo[          5]: 00000000
+# fifo[          6]: 00000000
+# time                   15 data_in:2cb5319d pop:0 push:1
+# time:                   15
+# fifo[          0]: 0784910e
+# fifo[          1]: 00000000
+# fifo[          2]: 00000000
+# fifo[          3]: 00000000
+# fifo[          4]: 00000000
+# fifo[          5]: 00000000
+# fifo[          6]: 00000000
+# time                   25 data_in:8aa06314 pop:0 push:0
+# time:                   25
+# fifo[          0]: 0784910e
+# fifo[          1]: 2cb5319d
+# fifo[          2]: 00000000
+# fifo[          3]: 00000000
+# fifo[          4]: 00000000
+# fifo[          5]: 00000000
+# fifo[          6]: 00000000
+# time                   35 data_in:eb27cf33 pop:0 push:1
+# time:                   35
+# fifo[          0]: 0784910e
+# fifo[          1]: 2cb5319d
+# fifo[          2]: 00000000
+# fifo[          3]: 00000000
+# fifo[          4]: 00000000
+# fifo[          5]: 00000000
+# fifo[          6]: 00000000
+# time                   45 data_in:dd10e9ba pop:0 push:0
+# time:                   45
+# fifo[          0]: 0784910e
+# fifo[          1]: 2cb5319d
+# fifo[          2]: eb27cf33
+# fifo[          3]: 00000000
+# fifo[          4]: 00000000
+# fifo[          5]: 00000000
+# fifo[          6]: 00000000
+# time                   55 data_in:506ce069 pop:0 push:1
+# time:                   55
+# fifo[          0]: 0784910e
+# fifo[          1]: 2cb5319d
+# fifo[          2]: eb27cf33
+# fifo[          3]: 00000000
+# fifo[          4]: 00000000
+# fifo[          5]: 00000000
+# fifo[          6]: 00000000
+# time                   65 data_in:40770b00 pop:1 push:0
+# time:                   65
+# fifo[          0]: 0784910e
+# fifo[          1]: 2cb5319d
+# fifo[          2]: eb27cf33
+# fifo[          3]: 506ce069
+# fifo[          4]: 00000000
+# fifo[          5]: 00000000
+# fifo[          6]: 00000000
+# time                   75 data_in:c345db3f pop:0 push:0
+# time:                   75
+# fifo[          0]: 00000000
+# fifo[          1]: 2cb5319d
+# fifo[          2]: eb27cf33
+# fifo[          3]: 506ce069
+# fifo[          4]: 00000000
+# fifo[          5]: 00000000
+# fifo[          6]: 00000000
+# pass
+# time                   85 data_in:be4a4ce6 pop:0 push:1
+# time:                   85
+# fifo[          0]: 00000000
+# fifo[          1]: 2cb5319d
+# fifo[          2]: eb27cf33
+# fifo[          3]: 506ce069
+# fifo[          4]: 00000000
+# fifo[          5]: 00000000
+# fifo[          6]: 00000000
+# time                   95 data_in:d439d5b5 pop:0 push:1
+# time:                   95
+# fifo[          0]: 00000000
+# fifo[          1]: 2cb5319d
+# fifo[          2]: eb27cf33
+# fifo[          3]: 506ce069
+# fifo[          4]: be4a4ce6
+# fifo[          5]: 00000000
+# fifo[          6]: 00000000
+# time                  105 data_in:cd9ed56c pop:0 push:0
+# time:                  105
+# fifo[          0]: 00000000
+# fifo[          1]: 2cb5319d
+# fifo[          2]: eb27cf33
+# fifo[          3]: 506ce069
+# fifo[          4]: be4a4ce6
+# fifo[          5]: d439d5b5
+# fifo[          6]: 00000000
+# time                  115 data_in:68eb85cb pop:0 push:0
+# time:                  115
+# fifo[          0]: 00000000
+# fifo[          1]: 2cb5319d
+# fifo[          2]: eb27cf33
+# fifo[          3]: 506ce069
+# fifo[          4]: be4a4ce6
+# fifo[          5]: d439d5b5
+# fifo[          6]: 00000000
+# time                  125 data_in:918b6a92 pop:0 push:0
+# time:                  125
+# fifo[          0]: 00000000
+# fifo[          1]: 2cb5319d
+# fifo[          2]: eb27cf33
+# fifo[          3]: 506ce069
+# fifo[          4]: be4a4ce6
+# fifo[          5]: d439d5b5
+# fifo[          6]: 00000000
+# time                  135 data_in:9f0f4181 pop:0 push:1
+# time:                  135
+# fifo[          0]: 00000000
+# fifo[          1]: 2cb5319d
+# fifo[          2]: eb27cf33
+# fifo[          3]: 506ce069
+# fifo[          4]: be4a4ce6
+# fifo[          5]: d439d5b5
+# fifo[          6]: 00000000
+# time                  145 data_in:562f7258 pop:1 push:0
+# time:                  145
+# fifo[          0]: 00000000
+# fifo[          1]: 2cb5319d
+# fifo[          2]: eb27cf33
+# fifo[          3]: 506ce069
+# fifo[          4]: be4a4ce6
+# fifo[          5]: d439d5b5
+# fifo[          6]: 9f0f4181
+# time                  155 data_in:9d00fed7 pop:1 push:0
+# time:                  155
+# fifo[          0]: 00000000
+# fifo[          1]: 00000000
+# fifo[          2]: eb27cf33
+# fifo[          3]: 506ce069
+# fifo[          4]: be4a4ce6
+# fifo[          5]: d439d5b5
+# fifo[          6]: 9f0f4181
+# j=          3 d1.data_out=eb27cf33   index_pop= 2 data_out=2cb5319d
+# time                  165 data_in:9258f2be pop:0 push:1
+# time:                  165
+# fifo[          0]: 00000000
+# fifo[          1]: 00000000
+# fifo[          2]: 00000000
+# fifo[          3]: 506ce069
+# fifo[          4]: be4a4ce6
+# fifo[          5]: d439d5b5
+# fifo[          6]: 9f0f4181
+# time                  175 data_in:25fa53cd pop:0 push:0
+# time:                  175
+# fifo[          0]: 9258f2be
+# fifo[          1]: 00000000
+# fifo[          2]: 00000000
+# fifo[          3]: 506ce069
+# fifo[          4]: be4a4ce6
+# fifo[          5]: d439d5b5
+# fifo[          6]: 9f0f4181
+# time                  185 data_in:53ca91c4 pop:1 push:0
+# time:                  185
+# fifo[          0]: 9258f2be
+# fifo[          1]: 00000000
+# fifo[          2]: 00000000
+# fifo[          3]: 506ce069
+# fifo[          4]: be4a4ce6
+# fifo[          5]: d439d5b5
+# fifo[          6]: 9f0f4181
+# time                  195 data_in:67e87663 pop:0 push:1
+# time:                  195
+# fifo[          0]: 9258f2be
+# fifo[          1]: 00000000
+# fifo[          2]: 00000000
+# fifo[          3]: 00000000
+# fifo[          4]: be4a4ce6
+# fifo[          5]: d439d5b5
+# fifo[          6]: 9f0f4181
+# pass
+# time                  205 data_in:9c21956a pop:0 push:1
+# time:                  205
+# fifo[          0]: 9258f2be
+# fifo[          1]: 67e87663
+# fifo[          2]: 00000000
+# fifo[          3]: 00000000
+# fifo[          4]: be4a4ce6
+# fifo[          5]: d439d5b5
+# fifo[          6]: 9f0f4181
+# time                  215 data_in:18e23c99 pop:1 push:0
+# time:                  215
+# fifo[          0]: 9258f2be
+# fifo[          1]: 67e87663
+# fifo[          2]: 9c21956a
+# fifo[          3]: 00000000
+# fifo[          4]: be4a4ce6
+# fifo[          5]: d439d5b5
+# fifo[          6]: 9f0f4181
+# time                  225 data_in:d45be3b0 pop:0 push:1
+# time:                  225
+# fifo[          0]: 9258f2be
+# fifo[          1]: 67e87663
+# fifo[          2]: 9c21956a
+# fifo[          3]: 00000000
+# fifo[          4]: 00000000
+# fifo[          5]: d439d5b5
+# fifo[          6]: 9f0f4181
+# pass
+# time                  235 data_in:9a3e1c6f pop:0 push:0
+# time:                  235
+# fifo[          0]: 9258f2be
+# fifo[          1]: 67e87663
+# fifo[          2]: 9c21956a
+# fifo[          3]: d45be3b0
+# fifo[          4]: 00000000
+# fifo[          5]: d439d5b5
+# fifo[          6]: 9f0f4181
+# time                  245 data_in:1cfe0296 pop:0 push:1
+# time:                  245
+# fifo[          0]: 9258f2be
+# fifo[          1]: 67e87663
+# fifo[          2]: 9c21956a
+# fifo[          3]: d45be3b0
+# fifo[          4]: 00000000
+# fifo[          5]: d439d5b5
+# fifo[          6]: 9f0f4181
+# time                  255 data_in:77482be5 pop:0 push:0
+# time:                  255
+# fifo[          0]: 9258f2be
+# fifo[          1]: 67e87663
+# fifo[          2]: 9c21956a
+# fifo[          3]: d45be3b0
+# fifo[          4]: 1cfe0296
+# fifo[          5]: d439d5b5
+# fifo[          6]: 9f0f4181
+# time                  265 data_in:e0d9181c pop:0 push:0
+# time:                  265
+# fifo[          0]: 9258f2be
+# fifo[          1]: 67e87663
+# fifo[          2]: 9c21956a
+# fifo[          3]: d45be3b0
+# fifo[          4]: 1cfe0296
+# fifo[          5]: d439d5b5
+# fifo[          6]: 9f0f4181
+# time                  275 data_in:359820fb pop:1 push:0
+# time:                  275
+# fifo[          0]: 9258f2be
+# fifo[          1]: 67e87663
+# fifo[          2]: 9c21956a
+# fifo[          3]: d45be3b0
+# fifo[          4]: 1cfe0296
+# fifo[          5]: d439d5b5
+# fifo[          6]: 9f0f4181
+# time                  285 data_in:b070ea42 pop:0 push:0
+# time:                  285
+# fifo[          0]: 9258f2be
+# fifo[          1]: 67e87663
+# fifo[          2]: 9c21956a
+# fifo[          3]: d45be3b0
+# fifo[          4]: 1cfe0296
+# fifo[          5]: 00000000
+# fifo[          6]: 9f0f4181
+# pass
+# time                  295 data_in:0d0751b1 pop:0 push:0
+# time:                  295
+# fifo[          0]: 9258f2be
+# fifo[          1]: 67e87663
+# fifo[          2]: 9c21956a
+# fifo[          3]: d45be3b0
+# fifo[          4]: 1cfe0296
+# fifo[          5]: 00000000
+# fifo[          6]: 9f0f4181
+# time                  305 data_in:0c01df08 pop:1 push:0
+# time:                  305
+# fifo[          0]: 9258f2be
+# fifo[          1]: 67e87663
+# fifo[          2]: 9c21956a
+# fifo[          3]: d45be3b0
+# fifo[          4]: 1cfe0296
+# fifo[          5]: 00000000
+# fifo[          6]: 9f0f4181
+# time                  315 data_in:bd46b407 pop:0 push:0
+# time:                  315
+# fifo[          0]: 9258f2be
+# fifo[          1]: 67e87663
+# fifo[          2]: 9c21956a
+# fifo[          3]: d45be3b0
+# fifo[          4]: 1cfe0296
+# fifo[          5]: 00000000
+# fifo[          6]: 00000000
+# pass
+# time                  325 data_in:6226fc6e pop:1 push:0
+# time:                  325
+# fifo[          0]: 9258f2be
+# fifo[          1]: 67e87663
+# fifo[          2]: 9c21956a
+# fifo[          3]: d45be3b0
+# fifo[          4]: 1cfe0296
+# fifo[          5]: 00000000
+# fifo[          6]: 00000000
+# time                  335 data_in:5714ddfd pop:0 push:0
+# time:                  335
+# fifo[          0]: 00000000
+# fifo[          1]: 67e87663
+# fifo[          2]: 9c21956a
+# fifo[          3]: d45be3b0
+# fifo[          4]: 1cfe0296
+# fifo[          5]: 00000000
+# fifo[          6]: 00000000
+# pass
+# time                  345 data_in:291fe874 pop:0 push:0
+# time:                  345
+# fifo[          0]: 00000000
+# fifo[          1]: 67e87663
+# fifo[          2]: 9c21956a
+# fifo[          3]: d45be3b0
+# fifo[          4]: 1cfe0296
+# fifo[          5]: 00000000
+# fifo[          6]: 00000000
+# time                  355 data_in:6f140593 pop:1 push:0
+# time:                  355
+# fifo[          0]: 00000000
+# fifo[          1]: 67e87663
+# fifo[          2]: 9c21956a
+# fifo[          3]: d45be3b0
+# fifo[          4]: 1cfe0296
+# fifo[          5]: 00000000
+# fifo[          6]: 00000000
+# time                  365 data_in:98b6e91a pop:0 push:0
+# time:                  365
+# fifo[          0]: 00000000
+# fifo[          1]: 00000000
+# fifo[          2]: 9c21956a
+# fifo[          3]: d45be3b0
+# fifo[          4]: 1cfe0296
+# fifo[          5]: 00000000
+# fifo[          6]: 00000000
+# pass
+# time                  375 data_in:d04000c9 pop:1 push:0
+# time:                  375
+# fifo[          0]: 00000000
+# fifo[          1]: 00000000
+# fifo[          2]: 9c21956a
+# fifo[          3]: d45be3b0
+# fifo[          4]: 1cfe0296
+# fifo[          5]: 00000000
+# fifo[          6]: 00000000
+# time                  385 data_in:2ac6e460 pop:0 push:0
+# time:                  385
+# fifo[          0]: 00000000
+# fifo[          1]: 00000000
+# fifo[          2]: 00000000
+# fifo[          3]: d45be3b0
+# fifo[          4]: 1cfe0296
+# fifo[          5]: 00000000
+# fifo[          6]: 00000000
+# pass
+# time                  395 data_in:6404459f pop:1 push:0
+# time:                  395
+# fifo[          0]: 00000000
+# fifo[          1]: 00000000
+# fifo[          2]: 00000000
+# fifo[          3]: d45be3b0
+# fifo[          4]: 1cfe0296
+# fifo[          5]: 00000000
+# fifo[          6]: 00000000
+# time                  405 data_in:a8616046 pop:1 push:0
+# time:                  405
+# fifo[          0]: 00000000
+# fifo[          1]: 00000000
+# fifo[          2]: 00000000
+# fifo[          3]: 00000000
+# fifo[          4]: 1cfe0296
+# fifo[          5]: 00000000
+# fifo[          6]: 00000000
+# j=          5 d1.data_out=1cfe0296   index_pop= 4 data_out=d45be3b0
+# time                  415 data_in:a5f1ea15 pop:1 push:0
+# time:                  415
+# fifo[          0]: 00000000
+# fifo[          1]: 00000000
+# fifo[          2]: 00000000
+# fifo[          3]: 00000000
+# fifo[          4]: 00000000
+# fifo[          5]: 00000000
+# fifo[          6]: 00000000
+# time                  425 data_in:299482cc pop:0 push:1
+# time:                  425
+# fifo[          0]: 00000000
+# fifo[          1]: 00000000
+# fifo[          2]: 00000000
+# fifo[          3]: 00000000
+# fifo[          4]: 00000000
+# fifo[          5]: 00000000
+# fifo[          6]: 00000000
+# pass
+# time                  435 data_in:9915a42b pop:0 push:0
+# time:                  435
+# fifo[          0]: 00000000
+# fifo[          1]: 00000000
+# fifo[          2]: 00000000
+# fifo[          3]: 00000000
+# fifo[          4]: 00000000
+# fifo[          5]: 299482cc
+# fifo[          6]: 00000000
+# time                  445 data_in:0dd111f2 pop:0 push:1
+# time:                  445
+# fifo[          0]: 00000000
+# fifo[          1]: 00000000
+# fifo[          2]: 00000000
+# fifo[          3]: 00000000
+# fifo[          4]: 00000000
+# fifo[          5]: 299482cc
+# fifo[          6]: 00000000
+# time                  455 data_in:d4edc9e1 pop:1 push:0
+# time:                  455
+# fifo[          0]: 00000000
+# fifo[          1]: 00000000
+# fifo[          2]: 00000000
+# fifo[          3]: 00000000
+# fifo[          4]: 00000000
+# fifo[          5]: 299482cc
+# fifo[          6]: 0dd111f2
+# time                  465 data_in:92f073b8 pop:0 push:1
+# time:                  465
+# fifo[          0]: 00000000
+# fifo[          1]: 00000000
+# fifo[          2]: 00000000
+# fifo[          3]: 00000000
+# fifo[          4]: 00000000
+# fifo[          5]: 00000000
+# fifo[          6]: 0dd111f2
+# pass
+# time                  475 data_in:e0005137 pop:0 push:0
+# time:                  475
+# fifo[          0]: 92f073b8
+# fifo[          1]: 00000000
+# fifo[          2]: 00000000
+# fifo[          3]: 00000000
+# fifo[          4]: 00000000
+# fifo[          5]: 00000000
+# fifo[          6]: 0dd111f2
+# time                  485 data_in:50daae1e pop:1 push:0
+# time:                  485
+# fifo[          0]: 92f073b8
+# fifo[          1]: 00000000
+# fifo[          2]: 00000000
+# fifo[          3]: 00000000
+# fifo[          4]: 00000000
+# fifo[          5]: 00000000
+# fifo[          6]: 0dd111f2
+# time                  495 data_in:ae10d02d pop:0 push:0
+# time:                  495
+# fifo[          0]: 92f073b8
+# fifo[          1]: 00000000
+# fifo[          2]: 00000000
+# fifo[          3]: 00000000
+# fifo[          4]: 00000000
+# fifo[          5]: 00000000
+# fifo[          6]: 00000000
+# pass
+# ** Note: $finish    : testbench.sv(84)
+#    Time: 501 ns  Iteration: 0  Instance: /tb
+# End time: 05:40:18 on May 28,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+End time: 05:40:18 on May 28,2026, Elapsed time: 0:00:01
+*** Summary *********************************************
+    qrun: Errors:   0, Warnings:   0
+    vlog: Errors:   0, Warnings:   1
+    vopt: Errors:   0, Warnings:   2
+    vsim: Errors:   0, Warnings:   0
+  Totals: Errors:   0, Warnings:   3
