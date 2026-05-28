@@ -28,5 +28,5 @@ Small SystemVerilog testbench and DUT for a 7-entry FIFO used for functional ver
 
 ## Next steps
 
-- Planning to develop a UVM testbench for the FIFO, including SVA assertions and functional coverage; I can scaffold the UVM environment (agents, driver, monitor, sequences) and add build/run scripts on request.
+- Planning to develop a UVM testbench for the FIFO, including SVA assertions and functional coverage. I can scaffold the UVM environment (agents, driver, monitor, sequences) and add build/run scripts on request.
 
